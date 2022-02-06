@@ -4,3 +4,6 @@ PyPDF2
 pyyaml
 xmlschema
 xmlunittest
+freezegun
+odoo_test_helper
+responses
