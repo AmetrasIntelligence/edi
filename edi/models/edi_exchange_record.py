@@ -19,7 +19,7 @@ class EDIExchangeRecord(models.Model):
     _order = "exchanged_on desc"
 
     name = fields.Char(compute="_compute_name")
-    identifier = fields.Char(required=True, index=True, readonly=True)
+    identifier = fields.Char(required=True, index=True, readonly=True, default="New")
     external_identifier = fields.Char(index=True, readonly=True)
     type_id = fields.Many2one(
         string="Exchange type",
@@ -214,7 +214,7 @@ class EDIExchangeRecord(models.Model):
         return super().create(vals)
 
     def _get_identifier(self):
-        return self.env["ir.sequence"].next_by_code("edi.exchange")
+            return self.env["ir.sequence"].next_by_code("edi.exchange") or "New"
 
     @api.constrains("backend_id", "type_id")
     def _constrain_backend(self):
