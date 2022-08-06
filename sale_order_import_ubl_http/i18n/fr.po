@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ametras-xsolutions\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: ametras-xsolutions\n"
+"X-Crowdin-Project-ID: 530964\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/sale_order_import_ubl_http/i18n/sale_order_import_ubl_http.pot\n"
+"X-Crowdin-File-ID: 3286\n"
+"Language: fr_FR\n"
+"PO-Revision-Date: 2022-08-06 21:46\n"
+
+#. module: sale_order_import_ubl_http
+#: model:ir.model,name:sale_order_import_ubl_http.model_res_company
+msgid "Companies"
+msgstr "Entreprises"
+
+#. module: sale_order_import_ubl_http
+#: model:ir.model,name:sale_order_import_ubl_http.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: sale_order_import_ubl_http
+#: model:ir.model,name:sale_order_import_ubl_http.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: sale_order_import_ubl_http
+#: code:addons/sale_order_import_ubl_http/models/sale_order.py:0
+#, python-format
+msgid "Sales order has already been imported before"
+msgstr ""
+
+#. module: sale_order_import_ubl_http
+#: code:addons/sale_order_import_ubl_http/models/sale_order.py:0
+#, python-format
+msgid "Sales order {} created"
+msgstr ""
+
+#. module: sale_order_import_ubl_http
+#: code:addons/sale_order_import_ubl_http/models/sale_order.py:0
+#, python-format
+msgid "Something went wrong with the importing wizard."
+msgstr ""
+
+#. module: sale_order_import_ubl_http
+#: model:ir.model.fields,field_description:sale_order_import_ubl_http.field_res_company__sale_order_ubl_import_http_confirmed
+#: model:ir.model.fields,field_description:sale_order_import_ubl_http.field_res_config_settings__sale_order_ubl_import_http_confirmed
+msgid "UBL order imported through HTTP set as confirmed"
+msgstr ""
+
+#. module: sale_order_import_ubl_http
+#: model:ir.model.fields,help:sale_order_import_ubl_http.field_res_company__sale_order_ubl_import_http_confirmed
+#: model:ir.model.fields,help:sale_order_import_ubl_http.field_res_config_settings__sale_order_ubl_import_http_confirmed
+msgid "When set the UBL sales order imported through HTTP will be set as confirmed. Otherwise they are kept as draft."
+msgstr ""
+
