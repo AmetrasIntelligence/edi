@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_exchange_template/i18n/edi_exchange_template.pot\n"
 "X-Crowdin-File-ID: 3206\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-08-07 00:00\n"
 
 #. module: edi_exchange_template
 #: model:ir.model.fields,field_description:edi_exchange_template.field_edi_exchange_template_mixin__backend_id
@@ -32,7 +32,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:edi_exchange_template.field_edi_exchange_template_mixin__code
 #: model:ir.model.fields,field_description:edi_exchange_template.field_edi_exchange_template_output__code
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #. module: edi_exchange_template
 #: model:ir.model.fields,field_description:edi_exchange_template.field_edi_exchange_template_mixin__code_snippet
@@ -181,7 +181,7 @@ msgstr ""
 #. module: edi_exchange_template
 #: model_terms:ir.ui.view,arch_db:edi_exchange_template.edi_exchange_template_output_view_form
 msgid "Template"
-msgstr ""
+msgstr "Vorlage"
 
 #. module: edi_exchange_template
 #: model:ir.model.fields,field_description:edi_exchange_template.field_edi_exchange_template_output__template_key
