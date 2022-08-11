@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi/i18n/edi.pot\n"
 "X-Crowdin-File-ID: 3200\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-08 02:14\n"
+"PO-Revision-Date: 2022-08-11 14:04\n"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__advanced_settings_edit
@@ -348,7 +348,7 @@ msgstr ""
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_processed_error
