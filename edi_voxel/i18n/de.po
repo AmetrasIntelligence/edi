@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_voxel/i18n/edi_voxel.pot\n"
 "X-Crowdin-File-ID: 3210\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-11 16:28\n"
+"PO-Revision-Date: 2022-08-12 14:54\n"
 
 #. module: edi_voxel
 #: model:ir.model.fields.selection,name:edi_voxel.selection__account_tax__voxel_tax_code__exento
@@ -161,7 +161,7 @@ msgstr "Konfigurationseinstellung"
 #. module: edi_voxel
 #: model_terms:ir.ui.view,arch_db:edi_voxel.view_company_form
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #. module: edi_voxel
 #: model:ir.model,name:edi_voxel.model_res_partner
