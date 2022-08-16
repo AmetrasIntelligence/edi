@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/webservice/i18n/webservice.pot\n"
 "X-Crowdin-File-ID: 3290\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:47\n"
+"PO-Revision-Date: 2022-08-16 14:53\n"
 
 #. module: webservice
 #: model:ir.model.fields,field_description:webservice.field_webservice_backend__content_type
@@ -134,7 +134,7 @@ msgstr ""
 #. module: webservice
 #: model:ir.model.fields,field_description:webservice.field_webservice_backend__url
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #. module: webservice
 #: model:ir.model.fields,field_description:webservice.field_webservice_backend__url_env_default
