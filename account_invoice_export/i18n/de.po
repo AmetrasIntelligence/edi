@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/account_invoice_export/i18n/account_invoice_export.pot\n"
 "X-Crowdin-File-ID: 3170\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-08-16 14:53\n"
 
 #. module: account_invoice_export
 #: model:ir.model.fields,help:account_invoice_export.field_account_move__send_through_http
@@ -127,10 +127,10 @@ msgstr ""
 #. module: account_invoice_export
 #: model:ir.model.fields,field_description:account_invoice_export.field_transmit_method__destination_url
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #. module: account_invoice_export
 #: model:ir.model.fields,field_description:account_invoice_export.field_transmit_method__destination_user
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
