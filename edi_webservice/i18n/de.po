@@ -14,12 +14,12 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_webservice/i18n/edi_webservice.pot\n"
 "X-Crowdin-File-ID: 3226\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:47\n"
+"PO-Revision-Date: 2022-08-17 15:27\n"
 
 #. module: edi_webservice
 #: model:ir.model,name:edi_webservice.model_edi_backend
 msgid "EDI Backend"
-msgstr ""
+msgstr "EDI Backend"
 
 #. module: edi_webservice
 #: model:ir.model.fields,field_description:edi_webservice.field_edi_backend__webservice_backend_id
