@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_backend_partner/i18n/edi_backend_partner.pot\n"
 "X-Crowdin-File-ID: 3204\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-08-17 15:27\n"
 
 #. module: edi_backend_partner
 #: model:ir.model,name:edi_backend_partner.model_res_partner
@@ -25,7 +25,7 @@ msgstr "Kontakt"
 #: model:ir.model,name:edi_backend_partner.model_edi_backend
 #: model_terms:ir.ui.view,arch_db:edi_backend_partner.view_partner_form
 msgid "EDI Backend"
-msgstr ""
+msgstr "EDI Backend"
 
 #. module: edi_backend_partner
 #: model:ir.model.fields,field_description:edi_backend_partner.field_res_partner__edi_backend_ids
