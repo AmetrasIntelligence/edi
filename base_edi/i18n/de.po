@@ -14,13 +14,13 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/base_edi/i18n/base_edi.pot\n"
 "X-Crowdin-File-ID: 3190\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-08-17 16:28\n"
 
 #. module: base_edi
 #: model:ir.module.category,name:base_edi.module_category_edi
 #: model:ir.ui.menu,name:base_edi.menu_edi_root
 msgid "EDI"
-msgstr ""
+msgstr "EDI"
 
 #. module: base_edi
 #: model:res.groups,name:base_edi.group_edi_manager
