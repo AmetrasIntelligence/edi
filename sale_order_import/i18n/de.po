@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/sale_order_import/i18n/sale_order_import.pot\n"
 "X-Crowdin-File-ID: 3272\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-11 12:11\n"
+"PO-Revision-Date: 2022-08-25 09:20\n"
 
 #. module: sale_order_import
 #: code:addons/sale_order_import/models/sale.py:0
@@ -168,7 +168,7 @@ msgstr ""
 #. module: sale_order_import
 #: model:ir.model.fields.selection,name:sale_order_import.selection__sale_order_import__price_source__pricelist
 msgid "Pricelist"
-msgstr ""
+msgstr "Preisliste"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_sale_order_import__sale_id
@@ -203,7 +203,7 @@ msgstr "Kundenauftrag"
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_sale_order_import__partner_shipping_id
 msgid "Shipping Address"
-msgstr ""
+msgstr "Lieferadresse"
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.sale_order_import_form
