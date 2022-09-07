@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/account_invoice_export/i18n/account_invoice_export.pot\n"
 "X-Crowdin-File-ID: 3170\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-16 14:53\n"
+"PO-Revision-Date: 2022-09-07 15:11\n"
 
 #. module: account_invoice_export
 #: model:ir.model.fields,help:account_invoice_export.field_account_move__send_through_http
@@ -116,7 +116,7 @@ msgstr ""
 #. module: account_invoice_export
 #: model:ir.model,name:account_invoice_export.model_transmit_method
 msgid "Transmit Method of a document"
-msgstr ""
+msgstr "Eingangsrechnung Übertragungsmethode eines Dokumentes"
 
 #. module: account_invoice_export
 #: code:addons/account_invoice_export/models/account_move.py:0
