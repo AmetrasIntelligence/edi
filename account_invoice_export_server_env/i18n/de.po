@@ -14,10 +14,10 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/account_invoice_export_server_env/i18n/account_invoice_export_server_env.pot\n"
 "X-Crowdin-File-ID: 3172\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-09-07 15:11\n"
 
 #. module: account_invoice_export_server_env
 #: model:ir.model,name:account_invoice_export_server_env.model_transmit_method
 msgid "Transmit Method of a document"
-msgstr ""
+msgstr "Eingangsrechnung Übertragungsmethode eines Dokumentes"
 
