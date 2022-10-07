@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_voxel_stock_picking/i18n/edi_voxel_stock_picking.pot\n"
 "X-Crowdin-File-ID: 3222\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:47\n"
+"PO-Revision-Date: 2022-10-07 05:55\n"
 
 #. module: edi_voxel_stock_picking
 #: model_terms:ir.ui.view,arch_db:edi_voxel_stock_picking.view_picking_form
@@ -107,7 +107,7 @@ msgstr ""
 #. module: edi_voxel_stock_picking
 #: model:ir.model,name:edi_voxel_stock_picking.model_stock_picking
 msgid "Transfer"
-msgstr ""
+msgstr "Transfer"
 
 #. module: edi_voxel_stock_picking
 #: model_terms:ir.ui.view,arch_db:edi_voxel_stock_picking.view_picking_form
