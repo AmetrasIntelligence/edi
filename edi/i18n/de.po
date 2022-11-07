@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi/i18n/edi.pot\n"
 "X-Crowdin-File-ID: 3200\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-17 15:27\n"
+"PO-Revision-Date: 2022-11-07 18:06\n"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__advanced_settings_edit
@@ -64,12 +64,12 @@ msgstr ""
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.message_edi_exchange_link
 msgid "<strong>Message:</strong>"
-msgstr ""
+msgstr "<strong>Nachricht:</strong>"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.message_edi_exchange_link
 msgid "<strong>State:</strong>"
-msgstr ""
+msgstr "<strong>Status:</strong>"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
@@ -133,28 +133,28 @@ msgstr "Aktion erforderlich"
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "Action retry: state moved back to '%s'"
-msgstr ""
+msgstr "Wiederholung: Status wurde auf '%s' zurückgesetzt"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__advanced_settings
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Erweiterte Einstellungen"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__advanced_settings_edit
 msgid "Advanced YAML settings"
-msgstr ""
+msgstr "Erweiterte YAML-Einstellungen"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_type_view_form
 msgid "Advanced settings"
-msgstr ""
+msgstr "Erweiterte Einstellungen"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "An error happened while sending. Please check exchange record info."
-msgstr ""
+msgstr "Beim Senden ist ein Fehler aufgetreten. Bitte überprüfen Sie die Informationen im Austausch-Datensatz."
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__message_attachment_count
@@ -178,36 +178,36 @@ msgstr "Backend"
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_backend_view_search
 msgid "Backend Type"
-msgstr ""
+msgstr "Backend Typ"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "Backend must match with exchange type's backend!"
-msgstr ""
+msgstr "Backend muss mit dem Backend des Austausch-Typen übereinstimmen!"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_type.py:0
 #, python-format
 msgid "Backend should respect backend type!"
-msgstr ""
+msgstr "Backend sollte den Backend-Typen respektieren!"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record_create__backend_type_id
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__backend_type_id
 msgid "Backend type"
-msgstr ""
+msgstr "Backend Typ"
 
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_backend_type_uniq_code
 msgid "Backend type code must be unique!"
-msgstr ""
+msgstr "Backend Typ Code muss eindeutig sein!"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "Backend type must match with exchange type's backend type!"
-msgstr ""
+msgstr "Backend Typ muss mit dem Backend Typen des Austausch-Typen übereinstimmen!"
 
 #. module: edi
 #: model:ir.ui.menu,name:edi.menu_edi_backend
@@ -228,7 +228,7 @@ msgstr "Code"
 #. module: edi
 #: model:ir.ui.menu,name:edi.menu_edi_config
 msgid "Config"
-msgstr ""
+msgstr "Einstellung"
 
 #. module: edi
 #: model:ir.model,name:edi.model_edi_exchange_record_create
@@ -353,17 +353,17 @@ msgstr "Fehler"
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_processed_error
 msgid "Error on process"
-msgstr ""
+msgstr "Fehler bei der Verarbeitung"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_receive_error
 msgid "Error on reception"
-msgstr ""
+msgstr "Fehler beim Empfangen"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__validate_error
 msgid "Error on validation"
-msgstr ""
+msgstr "Fehler bei der Validierung"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
@@ -374,7 +374,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_file
 msgid "Exchange File"
-msgstr ""
+msgstr "Austausch-Datei"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_file_auto_generate
@@ -385,37 +385,37 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__exchange_file_ext
 msgid "Exchange File Ext"
-msgstr ""
+msgstr "Dateiendung Austausch-Datei"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_filename
 msgid "Exchange Filename"
-msgstr ""
+msgstr "Name Austausch-Datei"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__exchange_filename_pattern
 msgid "Exchange Filename Pattern"
-msgstr ""
+msgstr "Format der Austausch-Datei"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__exchange_record_ids
 msgid "Exchange Record"
-msgstr ""
+msgstr "Austausch Datensatz"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__exchange_record_count
 msgid "Exchange Record Count"
-msgstr ""
+msgstr "Anzahl Austauschdatensätze"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record_create__exchange_type_id
 msgid "Exchange Type"
-msgstr ""
+msgstr "Austausch-Typ"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_error
 msgid "Exchange error"
-msgstr ""
+msgstr "Austausch Fehler"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
@@ -432,7 +432,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__edi_exchange_state
 msgid "Exchange state"
-msgstr ""
+msgstr "Austausch Status"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
@@ -448,7 +448,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchanged_on
 msgid "Exchanged on"
-msgstr ""
+msgstr "Ausgetauscht am"
 
 #. module: edi
 #: model:ir.ui.menu,name:edi.menu_edi_exchange_record
@@ -463,43 +463,43 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__external_identifier
 msgid "External Identifier"
-msgstr ""
+msgstr "Externe Identifikation"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s not received"
-msgstr ""
+msgstr "Datei %s wurde nicht empfangen"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s not valid"
-msgstr ""
+msgstr "Datei %s ist nicht gültig"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s processed successfully "
-msgstr ""
+msgstr "Datei %s wurde erfolgreich verarbeitet"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s processed with errors"
-msgstr ""
+msgstr "Datei %s wurde mit Fehlern verarbeitet"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s received successfully "
-msgstr ""
+msgstr "Datei %s wurde erfolgreich empfangen"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "File %s sent"
-msgstr ""
+msgstr "Datei %s gesendet"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__enable_domain
@@ -563,7 +563,7 @@ msgstr "ID"
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__identifier
 msgid "Identifier"
-msgstr ""
+msgstr "Identifikation"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__ack_type_id
@@ -585,7 +585,7 @@ msgstr "Wenn aktiviert, haben einige Nachrichten einen Zustellfehler."
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_type__direction__input
 msgid "Input"
-msgstr ""
+msgstr "Eingabe"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__message_is_follower
@@ -595,7 +595,7 @@ msgstr "Ist Beobachter"
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__job_channel_id
 msgid "Job Channel"
-msgstr ""
+msgstr "Job-Kanal"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend____last_update
@@ -650,7 +650,7 @@ msgstr "Modell"
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_type_view_form
 msgid "Model rules"
-msgstr ""
+msgstr "Modell-Regeln"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__model_ids
@@ -703,7 +703,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_type__direction__output
 msgid "Output"
-msgstr ""
+msgstr "Ausgabe"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__output_sent_processed_auto
@@ -713,17 +713,17 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__parent_id
 msgid "Parent"
-msgstr ""
+msgstr "Eltern"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_search
 msgid "Parent exchange"
-msgstr ""
+msgstr "Eltern-Austausch"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_processed
 msgid "Processed"
-msgstr ""
+msgstr "Verarbeitet"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_received
@@ -768,12 +768,12 @@ msgstr ""
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
 msgid "Related record"
-msgstr ""
+msgstr "Zugehöriger Datensatz"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__related_exchange_ids
 msgid "Related records"
-msgstr ""
+msgstr "Zugehörige Datensätze"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record_create__res_id
@@ -783,12 +783,12 @@ msgstr ""
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
 msgid "Retry"
-msgstr ""
+msgstr "Wiederholung"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__retryable
 msgid "Retryable"
-msgstr ""
+msgstr "Kann wiederholt werden"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__message_has_sms_error
@@ -798,23 +798,23 @@ msgstr "SMS-Zustellungsfehler"
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__output_sent
 msgid "Sent"
-msgstr ""
+msgstr "Gesendet"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__output_sent_and_error
 msgid "Sent and error"
-msgstr ""
+msgstr "Mit Fehlern gesendet"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__output_sent_and_processed
 msgid "Sent and processed"
-msgstr ""
+msgstr "Gesendet und verarbeitet"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__ack_received_on
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__exchanged_on
 msgid "Sent or received on this date."
-msgstr ""
+msgstr "Gesendet oder empfangen an diesem Datum."
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__enable_snippet
@@ -837,7 +837,7 @@ msgstr "Status"
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_exchange_type_code_uniq
 msgid "The code must be unique per backend"
-msgstr ""
+msgstr "Dieser Code muss pro Backend eindeutig sein"
 
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_exchange_record_external_identifier_uniq
@@ -847,12 +847,12 @@ msgstr ""
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_exchange_record_identifier_uniq
 msgid "The identifier must be unique."
-msgstr ""
+msgstr "Die Identifizierung muss eindeutig sein."
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__retryable
 msgid "The record state can be rolled back manually in case of failure."
-msgstr ""
+msgstr "Der Zustand kann im Fehlerfall manuell zurückgesetzt werden."
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_search
