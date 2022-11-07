@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi/i18n/edi.pot\n"
 "X-Crowdin-File-ID: 3200\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-11-07 18:06\n"
+"PO-Revision-Date: 2022-11-07 19:12\n"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__advanced_settings_edit
@@ -54,12 +54,12 @@ msgstr ""
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_consumer_mixin_buttons
 msgid "<i class=\"fa fa-retweet\"/>The record has some pending EDIs to be generated"
-msgstr ""
+msgstr "<i class=\"fa fa-retweet\"/>Der Datensatz hat noch offene EDI-Austausche, die noch generiert werden müssen"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.message_edi_exchange_link
 msgid "<strong>EDI exchange:</strong>"
-msgstr ""
+msgstr "<strong>EDI Austausch:</strong>"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.message_edi_exchange_link
@@ -165,7 +165,7 @@ msgstr "Anzahl der Anhänge"
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__exchange_file_auto_generate
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__exchange_file_auto_generate
 msgid "Auto generate output for records missing their payload. If active, a cron will take care of generating the output when not set yet. "
-msgstr ""
+msgstr "Automatisch erstellte Ausgabe für Datensätze benötigen noch ihren Anhang. Sofern aktiv, wird ein Hintergrund-Job dies erledigen."
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__backend_id
@@ -233,7 +233,7 @@ msgstr "Einstellung"
 #. module: edi
 #: model:ir.model,name:edi.model_edi_exchange_record_create
 msgid "Create an Exchange Record"
-msgstr ""
+msgstr "Einen Austausch-Datensatz erstellen"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__create_uid
@@ -272,7 +272,7 @@ msgstr "Anzeigename"
 #. module: edi
 #: model:res.groups,name:edi.group_edi_advanced_settings_manager
 msgid "EDI Advanced Settings Manager"
-msgstr ""
+msgstr "Manager für erweiterte EDI-Einstellungen"
 
 #. module: edi
 #: model:ir.actions.act_window,name:edi.act_open_edi_backend_view
@@ -291,12 +291,12 @@ msgstr "EDI Backend"
 #: model_terms:ir.ui.view,arch_db:edi.edi_backend_type_view_search
 #: model_terms:ir.ui.view,arch_db:edi.edi_backend_type_view_tree
 msgid "EDI Backend Type"
-msgstr ""
+msgstr "EDI Backend Typ"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__backend_type_id
 msgid "EDI Backend type"
-msgstr ""
+msgstr "EDI Backend Typ"
 
 #. module: edi
 #: model:ir.actions.act_window,name:edi.act_open_edi_exchange_record_view
@@ -304,7 +304,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_search
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_tree
 msgid "EDI Exchange Record"
-msgstr ""
+msgstr "EDI Austausch Datensatz"
 
 #. module: edi
 #: model:ir.actions.act_window,name:edi.act_open_edi_exchange_type_view
@@ -314,26 +314,26 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_type_view_search
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_type_view_tree
 msgid "EDI Exchange Type"
-msgstr ""
+msgstr "EDI Austausch-Typ"
 
 #. module: edi
 #: model:ir.model,name:edi.model_edi_exchange_record
 msgid "EDI exchange Record"
-msgstr ""
+msgstr "EDI Austausch Datensatz"
 
 #. module: edi
 #: model:ir.actions.server,name:edi.cron_edi_backend_check_output_exchange_ir_actions_server
 #: model:ir.cron,cron_name:edi.cron_edi_backend_check_output_exchange
 #: model:ir.cron,name:edi.cron_edi_backend_check_output_exchange
 msgid "EDI exchange check status"
-msgstr ""
+msgstr "EDI Austausch Prüfungs-Status"
 
 #. module: edi
 #: model:ir.actions.server,name:edi.cron_edi_backend_check_input_exchange_ir_actions_server
 #: model:ir.cron,cron_name:edi.cron_edi_backend_check_input_exchange
 #: model:ir.cron,name:edi.cron_edi_backend_check_input_exchange
 msgid "EDI exchange input status"
-msgstr ""
+msgstr "EDI Austausch Eingabe-Status"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__enable_domain
@@ -343,7 +343,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__enable_snippet
 msgid "Enable on snippet"
-msgstr ""
+msgstr "Auf Schnipsel aktivieren"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
@@ -369,7 +369,7 @@ msgstr "Fehler bei der Validierung"
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Exchabge record ID=%d already has a file to process!"
-msgstr ""
+msgstr "Austausch-Datensatz mit ID=%d besitzt bereits eine Datei zur Verarbeitung!"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_file
@@ -380,7 +380,7 @@ msgstr "Austausch-Datei"
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_file_auto_generate
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__exchange_file_auto_generate
 msgid "Exchange File Auto Generate"
-msgstr ""
+msgstr "Automatische Generierung für Übergabedateien"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__exchange_file_ext
@@ -421,13 +421,13 @@ msgstr "Austausch Fehler"
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Exchange record ID=%d is not an outgoing record, cannot be generated"
-msgstr ""
+msgstr "Austausch-Datensatz mit ID=%d ist kein zu exportierender Datensatz und kann nicht generiert werden"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Exchange record ID=%d is not in draft state and has already an output value."
-msgstr ""
+msgstr "Austausch-Datensatz mit ID=%d ist nicht mehr im Entwurfsstatus und hat schon einen Ausgabe-Wert."
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__edi_exchange_state
@@ -438,12 +438,12 @@ msgstr "Austausch Status"
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "Exchange state must respect direction!"
-msgstr ""
+msgstr "Austausch Status muss die Richtung respektieren!"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__type_id
 msgid "Exchange type"
-msgstr ""
+msgstr "Austausch-Typ"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchanged_on
@@ -453,12 +453,12 @@ msgstr "Ausgetauscht am"
 #. module: edi
 #: model:ir.ui.menu,name:edi.menu_edi_exchange_record
 msgid "Exchanges"
-msgstr ""
+msgstr "Austausche"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__expected_edi_configuration
 msgid "Expected Edi Configuration"
-msgstr ""
+msgstr "Erwartete EDI Konfiguration"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__external_identifier
@@ -504,7 +504,7 @@ msgstr "Datei %s gesendet"
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__enable_domain
 msgid "Filter domain to be checked on Models"
-msgstr ""
+msgstr "Filter, der auf den Modellen geprüft wird"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__message_follower_ids
@@ -537,7 +537,7 @@ msgstr "Generieren"
 #: model:ir.actions.act_window,name:edi.edi_exchange_record_create_act_window
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_create_form_view
 msgid "Generate Exchange Record"
-msgstr ""
+msgstr "Erstelle Austausch-Datensatz"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_search
@@ -548,7 +548,7 @@ msgstr "Gruppiere nach"
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__has_expected_edi_configuration
 msgid "Has Expected Edi Configuration"
-msgstr ""
+msgstr "Hat erwartete EDI Konfiguration"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__id
@@ -655,7 +655,7 @@ msgstr "Modell-Regeln"
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__model_ids
 msgid "Modules to be checked for manual EDI generation"
-msgstr ""
+msgstr "Module, die zur manuellen EDI-Erstellung überprüft werden sollen"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__name
@@ -698,7 +698,7 @@ msgstr "Anzahl ungelesener Nachrichten"
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__parent_id
 msgid "Original exchange which originated this record"
-msgstr ""
+msgstr "Ursprünglicher Austausch, der diesen Datensatz angelegt hat"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_type__direction__output
@@ -739,31 +739,31 @@ msgstr "Datensatz"
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Record ID=%d has no file to process!"
-msgstr ""
+msgstr "Austausch mit ID=%d hat keine Datei zur Verarbeitung!"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Record ID=%d has no file to send!"
-msgstr ""
+msgstr "Austausch mit ID=%d hat keine Datei zum Senden!"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Record ID=%d is not meant to be processed"
-msgstr ""
+msgstr "Austausch mit ID=%d ist nicht für die Verarbeitung vorgesehen"
 
 #. module: edi
 #: code:addons/edi/models/edi_backend.py:0
 #, python-format
 msgid "Record ID=%d is not meant to be sent!"
-msgstr ""
+msgstr "Austausch mit ID=%d ist nicht für das Senden vorgesehen!"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
 msgid "Related exchanges"
-msgstr ""
+msgstr "Zugehörige Austausche"
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
@@ -822,7 +822,10 @@ msgid "Snippet of code to be checked on Models,\n"
 "        You can use `record` and `exchange_type` here.\n"
 "        It will be executed if variable result has been defined as True\n"
 "        "
-msgstr ""
+msgstr "Code-Schnipsel, welches auf den Modellen geprüft wird,\n"
+"        Sie können hier `record` und `exchange_type` verwenden.\n"
+"        Es wird verarbeitet, wenn das Ergebnis als Wahr definiert ist\n"
+"        "
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_search
@@ -842,7 +845,7 @@ msgstr "Dieser Code muss pro Backend eindeutig sein"
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_exchange_record_external_identifier_uniq
 msgid "The external_identifier must be unique for a type and a backend."
-msgstr ""
+msgstr "Die externe Identifikation muss pro Typ und Backend eindeutig sein."
 
 #. module: edi
 #: model:ir.model.constraint,message:edi.constraint_edi_exchange_record_identifier_uniq
@@ -872,12 +875,12 @@ msgstr "Zähler für ungelesene Nachrichten"
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__input_pending
 msgid "Waiting to be received"
-msgstr ""
+msgstr "Wartend auf das Empfangen"
 
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__output_pending
 msgid "Waiting to be sent"
-msgstr ""
+msgstr "Wartend auf das Senden"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__website_message_ids
@@ -892,5 +895,5 @@ msgstr "Webseiten-Kommunikationsverlauf"
 #. module: edi
 #: model:ir.model.fields.selection,name:edi.selection__edi_exchange_record__edi_exchange_state__output_error_on_send
 msgid "error on send"
-msgstr ""
+msgstr "Fehler beim Senden"
 
