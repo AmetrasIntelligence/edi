@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_storage/i18n/edi_storage.pot\n"
 "X-Crowdin-File-ID: 3208\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-11-07 18:06\n"
+"PO-Revision-Date: 2022-11-07 19:12\n"
 
 #. module: edi_storage
 #: model:ir.model,name:edi_storage.model_edi_backend
@@ -24,7 +24,7 @@ msgstr "EDI Backend"
 #. module: edi_storage
 #: model:ir.model,name:edi_storage.model_edi_exchange_type
 msgid "EDI Exchange Type"
-msgstr ""
+msgstr "EDI Austausch-Typ"
 
 #. module: edi_storage
 #: model:ir.actions.server,name:edi_storage.cron_check_storage_pending_input_ir_actions_server
@@ -78,13 +78,13 @@ msgstr ""
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__input_dir_done
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__output_dir_done
 msgid "Path to folder for doneful operations"
-msgstr ""
+msgstr "Pfad zum Ordner für erledigte Operationen"
 
 #. module: edi_storage
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__input_dir_error
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__output_dir_error
 msgid "Path to folder for error operations"
-msgstr ""
+msgstr "Pfad zum Ordner für fehlerhafte Operationen"
 
 #. module: edi_storage
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__input_dir_pending
