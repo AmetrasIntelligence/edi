@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi/i18n/edi.pot\n"
 "X-Crowdin-File-ID: 3200\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-11-07 19:12\n"
+"PO-Revision-Date: 2022-11-10 15:37\n"
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_type__advanced_settings_edit
@@ -49,7 +49,10 @@ msgid "\n"
 "    Automatically set the record as processed after sending.\n"
 "    Usecase: the web service you send the file to processes it on the fly.\n"
 "    "
-msgstr ""
+msgstr "\n"
+"    Setzt den Datensatz nach Versand als verarbeitet.\n"
+"    Anwendungsfall: Ein Webservice versendet eine Datei, um diese ohne Speichern zu verarbeiten.\n"
+"    "
 
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_consumer_mixin_buttons
@@ -74,55 +77,55 @@ msgstr "<strong>Status:</strong>"
 #. module: edi
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_record_view_form
 msgid "ACK"
-msgstr ""
+msgstr "Bestätigung"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__ack_exchange_id
 msgid "ACK exchange"
-msgstr ""
+msgstr "Bestätigungsaustausch"
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "ACK file is required for this exchange but not found."
-msgstr ""
+msgstr "Bestätigungs-Datei wird für diesen Austausch benötigt, wurde jedoch nicht gefunden."
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "ACK file received but contains errors."
-msgstr ""
+msgstr "Bestätigungsdatei erhalten, allerdings enthält diese Fehler."
 
 #. module: edi
 #: code:addons/edi/models/edi_exchange_record.py:0
 #, python-format
 msgid "ACK file received."
-msgstr ""
+msgstr "Bestätigungsdatei erhalten."
 
 #. module: edi
 #: model:ir.model.fields,help:edi.field_edi_exchange_record__ack_exchange_id
 msgid "ACK for this exchange"
-msgstr ""
+msgstr "Bestätigung für diesen Austausch"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__ack_received_on
 msgid "ACK received on"
-msgstr ""
+msgstr "Bestätigung erhalten am"
 
 #. module: edi
 #: model:ir.model,name:edi.model_edi_exchange_consumer_mixin
 msgid "Abstract record where exchange records can be assigned"
-msgstr ""
+msgstr "Abstrakter Datensatz um Datenaustausche zuordnen zu können"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__ack_expected
 msgid "Ack Expected"
-msgstr ""
+msgstr "Bestätigung erwartet"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__ack_type_id
 msgid "Ack exchange type"
-msgstr ""
+msgstr "Bestätigungstyp"
 
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__message_needaction
