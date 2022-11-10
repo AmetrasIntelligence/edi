@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_storage/i18n/edi_storage.pot\n"
 "X-Crowdin-File-ID: 3208\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-11-07 19:12\n"
+"PO-Revision-Date: 2022-11-10 16:33\n"
 
 #. module: edi_storage
 #: model:ir.model,name:edi_storage.model_edi_backend
@@ -47,32 +47,32 @@ msgstr ""
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__input_dir_done
 msgid "Input done directory"
-msgstr ""
+msgstr "Verzeichnis für erledigte Eingänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__input_dir_error
 msgid "Input error directory"
-msgstr ""
+msgstr "Verzeichnis für fehlerhafte Eingänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__input_dir_pending
 msgid "Input pending directory"
-msgstr ""
+msgstr "Verzeichnis für wartende Eingänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__output_dir_done
 msgid "Output done directory"
-msgstr ""
+msgstr "Verzeichnis für erledigte Ausgänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__output_dir_error
 msgid "Output error directory"
-msgstr ""
+msgstr "Verzeichnis für fehlerhafte Ausgänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__output_dir_pending
 msgid "Output pending directory"
-msgstr ""
+msgstr "Verzeichnis für wartende Ausgänge"
 
 #. module: edi_storage
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__input_dir_done
@@ -90,17 +90,17 @@ msgstr "Pfad zum Ordner für fehlerhafte Operationen"
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__input_dir_pending
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__output_dir_pending
 msgid "Path to folder for pending operations"
-msgstr ""
+msgstr "Pfad zum Ordner für wartende Operationen"
 
 #. module: edi_storage
 #: model_terms:ir.ui.view,arch_db:edi_storage.edi_backend_view_form
 msgid "Storage"
-msgstr ""
+msgstr "Ablage"
 
 #. module: edi_storage
 #: model:ir.model.fields,field_description:edi_storage.field_edi_backend__storage_id
 msgid "Storage backend"
-msgstr ""
+msgstr "Ablage-Backend"
 
 #. module: edi_storage
 #: model:ir.model.fields,help:edi_storage.field_edi_backend__storage_id
