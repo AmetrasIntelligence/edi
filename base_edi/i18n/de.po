@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/base_edi/i18n/base_edi.pot\n"
 "X-Crowdin-File-ID: 3190\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-17 16:28\n"
+"PO-Revision-Date: 2022-11-10 15:37\n"
 
 #. module: base_edi
 #: model:ir.module.category,name:base_edi.module_category_edi
@@ -25,5 +25,5 @@ msgstr "EDI"
 #. module: base_edi
 #: model:res.groups,name:base_edi.group_edi_manager
 msgid "EDI Manager"
-msgstr ""
+msgstr "EDI Manager"
 
