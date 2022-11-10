@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_account/i18n/edi_account.pot\n"
 "X-Crowdin-File-ID: 3202\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-08-06 21:46\n"
+"PO-Revision-Date: 2022-11-10 16:33\n"
 
 #. module: edi_account
 #: model_terms:ir.ui.view,arch_db:edi_account.account_move_form_view
@@ -29,7 +29,7 @@ msgstr ""
 #. module: edi_account
 #: model_terms:ir.ui.view,arch_db:edi_account.account_move_form_view
 msgid "Disable"
-msgstr ""
+msgstr "Deaktivieren"
 
 #. module: edi_account
 #: model:ir.model.fields,field_description:edi_account.field_account_move__disable_edi_auto
@@ -50,7 +50,7 @@ msgstr ""
 #. module: edi_account
 #: model:ir.ui.menu,name:edi_account.menu_account_edi_root
 msgid "Exchange records"
-msgstr ""
+msgstr "Austausch-Datensätze"
 
 #. module: edi_account
 #: model:ir.model,name:edi_account.model_account_move
