@@ -14,7 +14,7 @@ msgstr ""
 "X-Crowdin-File: /[AmetrasIntelligence.edi] 13.0/edi_voxel_secondary_unit/i18n/edi_voxel_secondary_unit.pot\n"
 "X-Crowdin-File-ID: 3220\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2022-11-24 17:04\n"
+"PO-Revision-Date: 2022-12-21 23:14\n"
 
 #. module: edi_voxel_secondary_unit
 #: model:ir.model.fields.selection,name:edi_voxel_secondary_unit.selection__product_secondary_unit__voxel_code__cajas
@@ -59,7 +59,7 @@ msgstr ""
 #. module: edi_voxel_secondary_unit
 #: model:ir.model.fields.selection,name:edi_voxel_secondary_unit.selection__product_secondary_unit__voxel_code__bultos
 msgid "Packages"
-msgstr "Pakete"
+msgstr "Verpackungen"
 
 #. module: edi_voxel_secondary_unit
 #: model:ir.model.fields.selection,name:edi_voxel_secondary_unit.selection__product_secondary_unit__voxel_code__palets
