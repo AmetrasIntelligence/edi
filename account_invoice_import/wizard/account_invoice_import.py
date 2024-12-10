@@ -1232,9 +1232,7 @@ class AccountInvoiceImport(models.TransientModel):
                     )
                 )
         assert not float_compare(
-            parsed_inv["amount_total"],
-            invoice.amount_total,
-            precision_rounding=prec,
+            parsed_inv["amount_total"], invoice.amount_total, precision_rounding=prec,
         )
 
     def update_invoice_lines(self, parsed_inv, invoice, seller):
@@ -1574,9 +1572,7 @@ class AccountInvoiceImport(models.TransientModel):
                     )
                     continue
                 logger.info(
-                    "Attachment %d: %s. Trying to import it as an invoice",
-                    i,
-                    filename,
+                    "Attachment %d: %s. Trying to import it as an invoice", i, filename,
                 )
                 # if it's an XML file, attach.content is a string
                 # if it's a PDF file, attach.content is a byte !
