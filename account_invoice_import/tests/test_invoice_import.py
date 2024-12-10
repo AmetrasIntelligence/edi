@@ -220,7 +220,7 @@ class TestInvoiceImport(SavepointCase):
                 .create_invoice(parsed_inv, import_c)
             )
             logger.debug("testing import with import config=%s", import_c)
-            self.assertEqual(inv.move_type, parsed_inv["type"])
+            self.assertEqual(inv.type, parsed_inv["type"])
             self.assertEqual(inv.company_id.id, self.company.id)
             self.assertFalse(
                 inv.currency_id.compare_amounts(
@@ -282,7 +282,7 @@ class TestInvoiceImport(SavepointCase):
                 .create_invoice(parsed_inv, import_c)
             )
             logger.debug("testing import with import config=%s", import_c)
-            self.assertEqual(inv.move_type, parsed_inv["type"])
+            self.assertEqual(inv.type, parsed_inv["type"])
             self.assertEqual(inv.company_id.id, self.company.id)
             self.assertFalse(
                 inv.currency_id.compare_amounts(
@@ -444,7 +444,7 @@ Nina
         move = self.env["account.move"].search(
             [
                 ("company_id", "=", self.company.id),
-                ("move_type", "=", "in_invoice"),
+                ("type", "=", "in_invoice"),
                 ("invoice_source_email", "like", sender_email),
                 ("state", "=", "draft"),
             ]
@@ -461,7 +461,7 @@ Nina
         move = self.env["account.move"].search(
             [
                 ("company_id", "=", self.company.id),
-                ("move_type", "=", "in_invoice"),
+                ("type", "=", "in_invoice"),
                 ("partner_id", "=", self.partner_with_email.id),
                 ("state", "=", "draft"),
             ]
@@ -479,7 +479,7 @@ Nina
         move = self.env["account.move"].search(
             [
                 ("company_id", "=", self.company.id),
-                ("move_type", "=", "in_invoice"),
+                ("type", "=", "in_invoice"),
                 ("partner_id", "=", partner.id),
                 ("state", "=", "draft"),
             ]

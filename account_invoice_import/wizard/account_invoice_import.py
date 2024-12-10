@@ -243,9 +243,7 @@ class AccountInvoiceImport(models.TransientModel):
         else:
             journal_id = (
                 self.env["account.move"]
-                .with_context(
-                    default_move_type=parsed_inv["type"], company_id=company.id
-                )
+                .with_context(default_type=parsed_inv["type"], company_id=company.id)
                 ._get_default_journal()
                 .id
             )
@@ -260,13 +258,13 @@ class AccountInvoiceImport(models.TransientModel):
             or self.env.company
         )
         vals = {
-            "move_type": parsed_inv["type"],
+            "type": parsed_inv["type"],
             "company_id": company.id,
             "invoice_origin": parsed_inv.get("origin"),
             "ref": parsed_inv.get("invoice_number"),
             "invoice_date": parsed_inv.get("date"),
             "narration": parsed_inv.get("narration"),
-            "payment_reference": parsed_inv.get("payment_reference"),
+            "invoice_payment_ref": parsed_inv.get("payment_reference"),
             "invoice_line_ids": [],
         }
         if parsed_inv["type"] in ("out_invoice", "out_refund"):
@@ -301,7 +299,7 @@ class AccountInvoiceImport(models.TransientModel):
             # set by invoice_date + invoice_payment_term_id otherwise
             vals["invoice_payment_term_id"] = False
         # Bank info
-        if parsed_inv.get("iban") and vals["move_type"] == "in_invoice":
+        if parsed_inv.get("iban") and vals["type"] == "in_invoice":
             partner_bank = self._match_partner_bank(
                 partner,
                 parsed_inv["iban"],
@@ -645,7 +643,7 @@ class AccountInvoiceImport(models.TransientModel):
             [
                 ("company_id", "=", company_id),
                 ("commercial_partner_id", "=", commercial_partner.id),
-                ("move_type", "=", parsed_inv["type"]),
+                ("type", "=", parsed_inv["type"]),
                 ("ref", "=ilike", parsed_inv.get("invoice_number")),
             ],
             limit=1,
@@ -674,7 +672,7 @@ class AccountInvoiceImport(models.TransientModel):
                 vals["partner_country_id"] = country.id
         self.write(vals)
         xmlid = "account_invoice_import.account_invoice_import_action"
-        action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+        action = self.env["ir.actions.act_window"].for_xml_id(xmlid)
         action["res_id"] = self.id
         return action
 
@@ -868,13 +866,13 @@ class AccountInvoiceImport(models.TransientModel):
             if not wiz_vals.get("import_config_id"):
                 wiz_vals["state"] = "config"
                 xmlid = "account_invoice_import.account_invoice_import_action"
-                action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+                action = self.env["ir.actions.act_window"].for_xml_id(xmlid)
                 action["res_id"] = self.id
             else:
                 draft_same_supplier_invs = amo.search(
                     [
                         ("commercial_partner_id", "=", partner.id),
-                        ("move_type", "=", parsed_inv["type"]),
+                        ("type", "=", parsed_inv["type"]),
                         ("state", "=", "draft"),
                     ]
                 )
@@ -884,7 +882,7 @@ class AccountInvoiceImport(models.TransientModel):
                     if len(draft_same_supplier_invs) == 1:
                         wiz_vals["invoice_id"] = draft_same_supplier_invs[0].id
                     xmlid = "account_invoice_import.account_invoice_import_action"
-                    action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+                    action = self.env["ir.actions.act_window"].for_xml_id(xmlid)
                     action["res_id"] = self.id
                 else:
                     action = self.create_invoice_action(
@@ -912,7 +910,7 @@ class AccountInvoiceImport(models.TransientModel):
             import_config = self.import_config_id.convert_to_import_config()
         invoice = self.create_invoice(parsed_inv, import_config, origin)
         xmlid = "account.action_move_in_invoice_type"
-        action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+        action = self.env["ir.actions.act_window"].for_xml_id(xmlid)
         action.update(
             {
                 "view_mode": "form,tree,kanban",
@@ -1030,7 +1028,7 @@ class AccountInvoiceImport(models.TransientModel):
             accounts = import_config["product"].product_tmpl_id.get_product_accounts(
                 fiscal_pos=invoice.fiscal_position_id
             )
-            if invoice.move_type in ("out_invoice", "out_refund"):
+            if invoice.type in ("out_invoice", "out_refund"):
                 account = accounts["income"]
             else:
                 account = accounts["expense"]
@@ -1427,7 +1425,7 @@ class AccountInvoiceImport(models.TransientModel):
             % self.invoice_filename
         )
         xmlid = "account.action_move_in_invoice_type"
-        action = self.env["ir.actions.act_window"]._for_xml_id(xmlid)
+        action = self.env["ir.actions.act_window"].for_xml_id(xmlid)
         action.update(
             {
                 "view_mode": "form,tree,kanban",
