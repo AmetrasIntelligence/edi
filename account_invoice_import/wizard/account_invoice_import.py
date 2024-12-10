@@ -14,10 +14,23 @@ from lxml import etree
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.osv.expression import AND, OR
 from odoo.tools import config, float_compare, float_is_zero, float_round
 from odoo.tools.misc import format_amount
 
 logger = logging.getLogger(__name__)
+
+
+try:
+    from facturx import get_xml_from_pdf
+except ImportError:
+    logger.debug("Cannot import facturx")
+
+
+def get_wildcard_string(val):
+    if val and val[-1] != "%":
+        val += "%"
+    return val
 
 
 class AccountInvoiceImport(models.TransientModel):
@@ -82,6 +95,16 @@ class AccountInvoiceImport(models.TransientModel):
     @api.model
     def parse_xml_invoice(self, xml_root):
         return False
+
+    @api.model
+    def get_xml_files_from_pdf(self, file_data):
+        """
+        Overwrite the original function to use the facturx libraray to extract
+        xml from pdf
+        """
+        data = get_xml_from_pdf(pdf_file=file_data, check_xsd=False)
+        xml_root = etree.fromstring(data[1])
+        return {data[0]: xml_root}
 
     @api.model
     def parse_pdf_invoice(self, file_data):
@@ -254,7 +277,9 @@ class AccountInvoiceImport(models.TransientModel):
         assert parsed_inv.get("pre-processed"), "pre-processing not done"
         amo = self.env["account.move"]
         company = (
-            self.env["res.company"].browse(self.env.context.get("force_company"))
+            self.env["res.company"].browse(
+                parsed_inv.get("company_id") or self.env.context.get("force_company")
+            )
             or self.env.company
         )
         vals = {
@@ -267,6 +292,8 @@ class AccountInvoiceImport(models.TransientModel):
             "invoice_payment_ref": parsed_inv.get("payment_reference"),
             "invoice_line_ids": [],
         }
+        if parsed_inv.get("operating_unit_id"):
+            vals["operating_unit_id"] = parsed_inv.get("operating_unit_id")
         if parsed_inv["type"] in ("out_invoice", "out_refund"):
             partner_type = "customer"
         else:
@@ -525,7 +552,9 @@ class AccountInvoiceImport(models.TransientModel):
                 parsed_inv["partner"]["name"] = partner_name
         # pre_process_parsed_inv() will be called again a second time,
         # but it's OK
-        pp_parsed_inv = self.pre_process_parsed_inv(parsed_inv)
+        pp_parsed_inv = self.with_context(
+            edi_skip_company_check=True
+        ).pre_process_parsed_inv(parsed_inv)
         return pp_parsed_inv
 
     @api.model
@@ -797,14 +826,109 @@ class AccountInvoiceImport(models.TransientModel):
         # If you have an idea on how to fix this problem, please tell me!
         return action
 
+    @api.model
+    def _match_product_search(self, product_dict):
+        """
+        Extend the product search function to find products with additional
+        parameters.
+        """
+        default_code = product_dict.get("code")
+        barcode = product_dict.get("barcode")
+        ProductProduct = self.env["product.product"]
+        args = []
+        if default_code:
+            args += ProductProduct._get_e_invoice_default_code_search_args(
+                default_code, get_wildcard_string(default_code)
+            )
+        if barcode:
+            args += ProductProduct._get_e_invoice_barcode_search_args(
+                barcode, get_wildcard_string(barcode)
+            )
+        if args:
+            domain = AND(
+                [
+                    OR([arg] for arg in args),
+                    [("company_id", "in", [False, self.env.company.id])],
+                ]
+            )
+            product_variant_id = ProductProduct.search(domain, limit=1)
+            if product_variant_id:
+                return product_variant_id
+        return super()._match_product_search(product_dict=product_dict)
+
+    @api.model
+    def _hook_match_partner(self, partner_dict, chatter_msg, domain, order):
+        """
+        Custom partner search function to find partners with additional
+        parameters.
+        """
+        gln = partner_dict.get("gln")
+        vat = partner_dict.get("vat")
+        tax_number = partner_dict.get("tax_number")
+        ResPartner = self.env["res.partner"]
+        args = []
+        if gln:
+            args += ResPartner._get_e_invoice_gln_search_args(
+                gln, get_wildcard_string(gln)
+            )
+        if vat:
+            args += ResPartner._get_e_invoice_vat_search_args(
+                vat, get_wildcard_string(vat)
+            )
+        if tax_number:
+            args += ResPartner._get_e_invoice_tax_number_search_args(
+                tax_number, get_wildcard_string(tax_number)
+            )
+        if args:
+            domain = AND(
+                [
+                    OR([arg] for arg in args),
+                    [("company_id", "in", [False, self.env.company.id])],
+                ]
+            )
+            partner_id = ResPartner.search(domain, limit=1)
+            if partner_id:
+                return partner_id
+        return super()._hook_match_partner(
+            partner_dict=partner_dict,
+            chatter_msg=chatter_msg,
+            domain=domain,
+            order=order,
+        )
+
+    def _get_operating_unit(self, parsed_inv):
+        """
+        Find the buyer party partner and get the operating unit from it
+        """
+        OperatingUnit = self.env["operating.unit"]
+        try:
+            partner_id = self._match_partner(
+                parsed_inv["company"], parsed_inv["chatter_msg"], raise_exception=False
+            )
+            if partner_id:
+                return self.env["operating.unit"].search(
+                    [("partner_id", "=", partner_id.id)], limit=1
+                )
+        except Exception:
+            ...
+        return OperatingUnit
+
     def import_invoice(self):
         """Method called by the button of the wizard
         (import step AND config step)"""
         self.ensure_one()
         amo = self.env["account.move"]
         aiico = self.env["account.invoice.import.config"]
-        company_id = self.env.context.get("force_company") or self.env.company.id
         parsed_inv = self.get_parsed_invoice()
+        operating_unit_id = self._get_operating_unit(parsed_inv)
+        if operating_unit_id:
+            parsed_inv["operating_unit_id"] = operating_unit_id.id
+        company_id = (
+            operating_unit_id.company_id.id
+            or self.env.context.get("force_company")
+            or self.env.company.id
+        )
+        parsed_inv["company_id"] = company_id
         if not self.partner_id:
             if parsed_inv.get("partner"):
                 try:

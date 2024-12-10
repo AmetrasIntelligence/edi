@@ -44,3 +44,40 @@ class ResPartner(models.Model):
             "invoice_import_config_main_view": True,
         }
         return action
+
+    def _get_e_invoice_vat_search_args(self, vat, wildcard_vat):
+        """
+        Return default search query for partner search by vat
+        """
+        normalized_vat = vat.replace(" ", "")
+        return [
+            ("vat", "in", [normalized_vat, vat]),
+            ("tax_number", "in", [normalized_vat, vat]),
+        ]
+
+    def _get_e_invoice_tax_number_search_args(self, tax_number, wildcard_tax_number):
+        """
+        Return default search query for partner search by tax_number in e invoice
+        """
+        normalized_tax_number = tax_number.replace(" ", "")
+        return [
+            ("vat", "in", [normalized_tax_number, tax_number]),
+            ("tax_number", "in", [normalized_tax_number, tax_number]),
+        ]
+
+    def _get_e_invoice_gln_search_args(self, gln, wildcard_gln):
+        """
+        Return default search query for partner search by gln in e invoice
+        """
+        PartnerIDNumber = self.env["res.partner.id_number"]
+        normalized_gln = gln.replace(" ", "")
+        partner_ids = PartnerIDNumber.search(
+            [
+                ("active", "=", True),
+                ("category_id.code", "=", "gln_id_number"),
+                ("name", "in", [normalized_gln, gln]),
+            ]
+        ).mapped("partner_id")
+        if partner_ids:
+            return [("id", "in", partner_ids.ids)]
+        return []

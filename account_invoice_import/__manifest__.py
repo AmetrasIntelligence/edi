@@ -4,7 +4,7 @@
 
 {
     "name": "Account Invoice Import",
-    "version": "13.0.1.0.1",
+    "version": "13.0.1.1.0",
     "category": "Accounting & Finance",
     "license": "AGPL-3",
     "summary": "Import supplier invoices/refunds as PDF or XML files",
@@ -16,7 +16,11 @@
         "base_iban",
         "base_business_document_import",
         "onchange_helper",
+        "account_operating_unit",
+        "partner_identification",
+        "partner_identification_gln",
     ],
+    "external_dependencies": {"python": ["factur-x==3.1"]},
     "data": [
         "security/ir.model.access.csv",
         "security/rule.xml",
