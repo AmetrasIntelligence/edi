@@ -1,9 +1,7 @@
+# generated from manifests external_dependencies
 factur-x
+factur-x==3.1
 lxml
 PyPDF2
 pyyaml
 xmlschema
-xmlunittest
-freezegun
-odoo_test_helper
-responses
