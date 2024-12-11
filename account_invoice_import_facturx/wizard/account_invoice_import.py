@@ -44,6 +44,24 @@ class AccountInvoiceImport(models.TransientModel):
                     "/ram:SpecifiedTaxRegistration"
                     "/ram:ID[@schemeID='VA']",  # ZUGFeRD
                 ],
+                "tax_number": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:SpecifiedTaxRegistration"
+                    "/ram:ID[@schemeID='FC']",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:SpecifiedTaxRegistration"
+                    "/ram:ID[@schemeID='FC']",  # ZUGFeRD
+                ],
+                "gln": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:GlobalID[@schemeID='0088']",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:GlobalID[@schemeID='0088']",  # ZUGFeRD
+                ],
                 "name": [
                     "//ram:ApplicableHeaderTradeAgreement"
                     "/ram:SellerTradeParty"
@@ -63,6 +81,18 @@ class AccountInvoiceImport(models.TransientModel):
                     "/ram:DefinedTradeContact"
                     "/ram:EmailURIUniversalCommunication"
                     "/ram:URIID",  # ZUGFeRD
+                ],
+                "phone": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:TelephoneUniversalCommunication"
+                    "/ram:CompleteNumber",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:SellerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:TelephoneUniversalCommunication"
+                    "/ram:CompleteNumber",  # ZUGFeRD
                 ],
                 "country_code": [
                     "//ram:ApplicableHeaderTradeAgreement"
@@ -111,6 +141,56 @@ class AccountInvoiceImport(models.TransientModel):
                     "/ram:BuyerTradeParty"
                     "/ram:SpecifiedTaxRegistration"
                     "/ram:ID[@schemeID='VA']",  # ZUGFeRD
+                ],
+                "tax_number": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:SpecifiedTaxRegistration"
+                    "/ram:ID[@schemeID='FC']",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:SpecifiedTaxRegistration"
+                    "/ram:ID[@schemeID='FC']",  # ZUGFeRD
+                ],
+                "gln": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:GlobalID[@schemeID='0088']",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:GlobalID[@schemeID='0088']",  # ZUGFeRD
+                ],
+                "name": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:Name",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:Name",  # ZUGFeRD
+                ],
+                "email": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:EmailURIUniversalCommunication"
+                    "/ram:URIID",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:EmailURIUniversalCommunication"
+                    "/ram:URIID",  # ZUGFeRD
+                ],
+                "phone": [
+                    "//ram:ApplicableHeaderTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:TelephoneUniversalCommunication"
+                    "/ram:CompleteNumber",  # Factur-X
+                    "//ram:ApplicableSupplyChainTradeAgreement"
+                    "/ram:BuyerTradeParty"
+                    "/ram:DefinedTradeContact"
+                    "/ram:TelephoneUniversalCommunication"
+                    "/ram:CompleteNumber",  # ZUGFeRD
                 ],
             },
             "invoice_number": [
@@ -257,6 +337,7 @@ class AccountInvoiceImport(models.TransientModel):
                 "code": ["ram:SpecifiedTradeProduct/ram:SellerAssignedID"],
             },
             "name": ["ram:SpecifiedTradeProduct/ram:Name"],
+            "description": ["ram:SpecifiedTradeProduct/ram:Description"],
             "date_start": [
                 "ram:SpecifiedLineTradeSettlement"
                 "/ram:BillingSpecifiedPeriod"
@@ -269,6 +350,18 @@ class AccountInvoiceImport(models.TransientModel):
             ],
         }
         vals = self.xpath_to_dict_helper(iline, xpath_dict, namespaces)
+        name_parts = []
+        if vals.get("name"):
+            name_parts.append(vals.get("name"))
+        if vals.get("description"):
+            name_parts.append(vals.get("description"))
+        if vals.get("product"):
+            product = vals.get("product")
+            if product.get("code"):
+                name_parts.append(product.get("code"))
+            if product.get("barcode"):
+                name_parts.append(product.get("barcode"))
+        vals["name"] = "\n".join(name_parts)
         price_unit_xpath = iline.xpath(
             "ram:SpecifiedSupplyChainTradeAgreement"
             "/ram:NetPriceProductTradePrice"
@@ -650,8 +743,10 @@ class AccountInvoiceImport(models.TransientModel):
         )
         # Hack for the sample ZUGFeRD invoices that use an invalid VAT number !
         if res["partner"].get("vat") == "DE123456789":
-            res["partner"].pop("vat")
+            res["partner"]["vat"] = "DE123456788"
             if not res["partner"].get("email"):
                 res["partner"]["name"] = "Lieferant GmbH"
+        if res["company"].get("vat") == "DE123456789":
+            res["company"]["vat"] = "DE123456788"
         logger.info("Result of Factur-X XML parsing: %s", res)
         return res
