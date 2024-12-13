@@ -197,6 +197,14 @@ class AccountInvoiceImport(models.TransientModel):
                 "//rsm:ExchangedDocument/ram:ID",  # Factur-X
                 "//rsm:HeaderExchangedDocument/ram:ID",  # ZUGFeRD
             ],
+            "payment_reference": [
+                "//ram:ApplicableHeaderTradeAgreement"
+                "/ram:BuyerOrderReferencedDocument"
+                "/ram:IssuerAssignedID",  # Factur-X
+                "//ram:ApplicableSupplyChainTradeAgreement"
+                "/ram:BuyerOrderReferencedDocument"
+                "/ram:IssuerAssignedID",  # ZUGFeRD
+            ],
             "date": [
                 "//rsm:ExchangedDocument"
                 "/ram:IssueDateTime/udt:DateTimeString",  # Factur-X
